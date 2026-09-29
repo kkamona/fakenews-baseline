@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.coverage
+.ruff_cache/
+# Large / private thesis assets
+data/raw/
+data/processed/
+models/
+outputs/
+*.pt
+*.safetensors
