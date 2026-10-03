@@ -63,3 +63,12 @@ def test_overlap_detects_leak():
     a = pd.DataFrame({"full_text": ["same", "x"], "label": [0, 1]})
     b = pd.DataFrame({"full_text": ["same", "y"], "label": [0, 1]})
     assert overlap_counts(a, b, b.iloc[:0])["train_val"] == 1
+
+def test_prepare_rejects_invalid_labels():
+    df = pd.DataFrame({
+        "title": ["A long enough headline here"],
+        "text": ["Some sufficiently long body text"],
+        "label": [2],
+    })
+    with pytest.raises(ValueError, match="Labels"):
+        prepare_dataframe(df)
