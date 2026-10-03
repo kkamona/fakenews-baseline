@@ -35,6 +35,11 @@ def prepare_dataframe(
     if deduplicate:
         out["_hash"] = out["full_text"].map(md5_hash)
         out = out.drop_duplicates(subset="_hash")
+    
+    labels = df["label"]
+    if not labels.isin([0, 1]).all():
+        bad = sorted(labels[~labels.isin([0, 1])].dropna().unique().tolist())
+        raise ValueError(f"Labels must be 0 or 1; found invalid values: {bad}")
 
     return out[["full_text", "label"]].reset_index(drop=True)
 
