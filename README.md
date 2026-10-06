@@ -1,7 +1,7 @@
 # fakenews-baseline
 
 [![CI](https://github.com/kkamona/fakenews-baseline/actions/workflows/ci.yml/badge.svg)](https://github.com/kkamona/fakenews-baseline/actions)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-green)
 
 A small, tested Python toolkit extracted from my thesis on **fake-news detection on the WELFake dataset**.
 It turns the exploratory notebooks (setup, preprocessing, de-duplication, TF-IDF baseline, metrics,
